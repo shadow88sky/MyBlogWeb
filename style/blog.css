@@ -1,0 +1,231 @@
+html, body, div, span, ul, li, img, h1, p, nav, banner {
+    padding: 0;
+    margin: 0;
+}
+
+span{
+    font-family: 'microsoft yahei';
+}
+
+.sidebar {
+    background-color: #5f6d7e;
+    height: 100%;
+    width: 23%;
+    float: left;
+    position: fixed;
+}
+
+.top-selection {
+    padding: 40px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border: 4px solid white;
+    border-radius: 75px;
+    overflow-y: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+}
+
+h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.top-selection p {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.nav {
+    margin: 30px 0;
+}
+
+.blogLabel{
+    margin: 100px 0;
+}
+
+.blogLabel li{
+    padding: 5px 40px;
+    list-style: none;
+}
+
+.blogLabel li a{
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.blogLabel span:hover{
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav li {
+    display: block;
+}
+
+.nav li a {
+    padding: 15px 40px;
+    color: #ffffff;
+    display: block;
+    font-size: 16px;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.nav li a:hover {
+    background: rgb(91, 104, 120);
+}
+
+.nav li a.active {
+    background: #495461;
+}
+
+.banner {
+    background: url("../image/banner.jpg");
+    width: 77%;
+    padding: 260px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    float: right;
+}
+
+.banner-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(95, 109, 126, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.welcome-text {
+    position: relative;
+    z-index: 4;
+}
+
+.bshare-custom{
+    padding-top: 100px;
+    padding-left: 30px;
+}
+
+.welcome-text h2 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-content {
+    float: right;
+    width: 77%;
+    background-color: rgb(254,254,242);
+}
+
+.page-section {
+    padding: 40px;
+}
+
+.blogContent{
+    padding: 40px;
+}
+
+.blogTitle{
+    margin-right: -15px;
+    margin-left: 90px;
+    font-size: 36px;
+}
+
+.page-section .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.page-section .row .col-md-12 {
+    width: 100%;
+}
+
+.page-section .row p {
+    color: #5f6d7e;
+}
+
+.page-section .row .col-md-12 h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.content-wrapper {
+    padding: 0 80px;
+}
+
+.col-md-12 span{
+    display: block;
+    text-align: right;
+    padding-top: 30px;
+    color: #5f6d7e;
+}
+
+.col-md-12 a{
+    text-decoration: none;
+}
+
+
+
+
+
+#cnblogs_post_body h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#cnblogs_post_body p {
+    margin: 10px auto;
+    text-indent: 0;
+}
+
+#cnblogs_post_body ul {
+    list-style-type: disc;
+    margin-left: 45px;
+    padding-left: 0;
+}
+
+#cnblogs_post_body ul li {
+    list-style: inherit!important;
+}
+
+.cnblogs_code{
+    background-color: #f5f5f5;
+    font-family: Courier New!important;
+    font-size: 12px!important;
+    border: 1px solid #ccc;
+    padding: 5px;
+    overflow: auto;
+    margin: 5px 0;
+    color: #000;
+}
+
+.cnblogs_code pre {
+    font-family: Courier New!important;
+    font-size: 12px!important;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.cnblogs_code span {
+    font-family: Courier New!important;
+    font-size: 12px!important;
+    line-height: 1.5!important;
+}

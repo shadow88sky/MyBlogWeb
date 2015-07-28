@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="javascript/jquery-1.7.1.min.js"></script>
+    <script src="javascript/angular.js"></script>
+    <script src="controller/consumeController.js"></script>
+    <script src="javascript/angular-route.js" type="text/javascript"></script>
+    <script src="javascript/route.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style/consume.css" type="text/css">
+    <script type="text/javascript" src="javascript/DatePicker.js"></script>
+    <link rel="stylesheet" href="style/easydialog.css"/>
+    <script src="javascript/easydialog.min.js"></script>
+</head>
+<body>
+<div ng-controller="consumeController">
+    <div id="container">
+        <div class="caption">半岛家的消费记录</div>
+        <div>
+            <span>开始日期:</span>
+            <input type="text" id="dateFrom" style="width:70px" onfocus="HS_setDate(this)">
+            <span>结束日期:</span>
+            <input type="text" id="dateEnd" style="width:70px" onfocus="HS_setDate(this)">
+            <input type="button" style="float:right;background-image: url('image/consumeButton.gif')" value="新增"
+                   ng-click="add()">
+            <input type="button" style="float:right;background-image: url('image/consumeButton.gif')" value="查询"
+                   ng-click="search()">
+        </div>
+        </br>
+        <table class="zebra">
+            <thead>
+            <tr>
+                <th>消费人</th>
+                <th>消费商品</th>
+                <th>消费金额</th>
+                <th>消费时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in consume">
+                <td>{{item.name}}</td>
+                <td>{{item.goods}}</td>
+                <td>{{item.money}}</td>
+                <td>{{item.createtime | date: 'yyyy-MM-dd'}}</td>
+                <td><img src = "image/delete.jpg" title="删除" ng-click="delete(item._id)"  style="width:14px;height:14px;padding-left: 90px;cursor: pointer"/></td>
+            </tr>
+            <tr>
+                <td>总计</td>
+                <td></td>
+                <td>{{sum}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="create" style="display:none">
+        <form action="" method="post" class="basic-grey">
+            <h1>新建消费记录</h1>
+            <label>
+                <span>消费人:</span>
+                <select ng-model="manSelect" ng-options="o.name as o.name for o in consumeMan">
+                    <option value="">请选择</option>
+                </select>
+            </label>
+            <label>
+                <span>消费商品:</span>
+                <input type="text" id="goods" maxlength="8" name="goods"/>
+            </label>
+            <label>
+                <span>消费金额:</span>
+                <input type="text" id="money" name="money"/>
+            </label>
+            <label>
+                <span>消费时间</span>
+                <input type="text" id="createtime" style="width:70px" onfocus="HS_setDate(this)">
+            </label>
+            <label>
+                <span>&nbsp;</span>
+                <input type="button" class="button" ng-click="submit()" value="添加"/>
+                <span>&nbsp;</span>
+                <input type="button" class="button" ng-click="cancel()" value="取消" />
+            </label>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

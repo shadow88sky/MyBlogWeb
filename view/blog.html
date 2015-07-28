@@ -1,0 +1,16 @@
+<div class="content-wrapper" ng-repeat="item in blogs">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#/blog/{{item._id}}"><h2>{{item.title}}</h2></a>
+
+                <p>摘要:{{item.abstract}}</p>
+
+                <span>posted @ {{item.createtime | date: 'yyyy-MM-dd'}}</span>
+                <!--<div ng-bind-html="item.content"></div>-->
+
+            </div>
+        </div>
+    </div>
+    <hr/>
+</div>

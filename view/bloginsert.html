@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../javascript/jquery-1.7.1.min.js"></script>
+    <title></title>
+    <script>
+        function blog() {
+            $.ajax({
+                type: "POST",
+                url: "http://121.42.140.208:3000/blogCreate",
+                data: {
+                    "title": $("#title").val(),
+                    "abstract": $("#abstract").val(),
+                    "content": $("#content").val(),
+                    "click": 0,
+                    "createtime": Date.parse($("#createtime").val()),
+                    "labels":"html"
+                },
+                success: function (data) {
+                   console.log(data);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        function updateBlog() {
+            $.ajax({
+                type: "POST",
+                url: "http://121.42.140.208:3000/blogUpdate",
+                data: {
+                    "id" : $("#blogid").val(),
+                    "labels": $("#label").val()
+                },
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        function delLabel() {
+            $.ajax({
+                type: "GET",
+                url: "http://121.42.140.208:3000/delLabel?id=" + $("#blogid").val(),
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<label>题目</label>
+<input type="text" id="title">
+<label>摘要</label>
+<textarea id="abstract"></textarea>
+<label>内容</label>
+<textarea id="content"></textarea>
+<lable>时间</lable>
+<input type="date" id="createtime">
+<input type="button" onclick="blog()">
+<div>
+    <label>博客id</label>
+    <input type="text" id="blogid">
+    <lable>标签</lable>
+    <input type="text" id="label">
+    <input type="button" value="更新标签" onclick="updateBlog()">
+    <input type="button" value="删除标签" onclick="delLabel()">
+</div>
+<!-- 加载编辑器的容器 -->
+<script id="container" name="content" type="text/plain">
+        这里写你的初始化内容
+    </script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="../javascript/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="../javascript/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="../style/blog.css" rel="stylesheet">
+    <script src="../javascript/jquery-1.7.1.min.js"></script>
+    <script src="../javascript/angular.js"></script>
+    <script src="../javascript/angular-sanitize.js"></script>
+    <script src="../javascript/angular-route.js"></script>
+    <script src="../javascript/app.js"></script>
+    <script src="../controller/blogIndexController.js"></script>
+    <script src="../controller/blogController.js"></script>
+    <script src="../controller/blogContentController.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-controller="blogIndexController">
+    <div class="sidebar">
+        <div class="top-selection">
+            <div class="profile-image">
+                <img src="../images/profileimage.png"/>
+            </div>
+            <h3>徐晨</h3>
+
+            <p>Node攻城师，正在学习前端，致力于全桟~</p>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="" ref="#top" class="active">欢迎</a></li>
+                <li><a href="" ref="#blog">博客</a></li>
+                <!--<li><a href="" ref="#top">联系</a></li>-->
+            </ul>
+        </div>
+
+        <div class="blogLabel">
+            <ul  ng-repeat="la in labels">
+                <li><a href="#/index/{{la._id}}"><span>{{la._id}}({{la.num_tutorial}})</span></a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="banner" id="top">
+        <div class="banner-overlay"></div>
+        <div class="welcome-text">
+            <h2>Welcome To 半岛家的 BLOG</h2>
+        </div>
+    </div>
+    <div ng-view class="main-content" id="blog">
+
+    </div>
+    <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a>
+    <script type="text/javascript" charset="utf-8"
+            src="http://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=5&amp;fs=4&amp;bgcolor=Green"></script>
+</div>
+</div>
+</body>
+</html>
